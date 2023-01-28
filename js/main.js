@@ -1,23 +1,22 @@
-const form = document.querySelector('#form'),
-input = document.querySelector('#inp'),
-btn = document.querySelector('#btn'),
-content = document.querySelector('.content');
+const   form = document.querySelector('#form'),
+        input = document.querySelector('#inp'),
+        btn = document.querySelector('#btn'),
+        content = document.querySelector('.content');
 
-function data(result,word){
+function catalog(result,word){
     if(result.title){
         content.innerHTML = `
             <h2 class="notFinded">Can't find "${word}", please write correct word</h2>
         `
     }else{
         let word = result[0].word,
-        phonetic = result[0].phonetic,
-        meaning = result[0].meanings[0].definitions[0].definition,
-        example = result[0].meanings[0].definitions[0].example,
-        using = result[0].meanings[0].definitions[0].definition,
-        example_2 = result[0].meanings[0].definitions[0].example,
-        using_2 = result[0].meanings[0].definitions[0].definition,
-        audio = result[0].phonetics[0].audio;
-
+            phonetic = result[0].phonetic,
+            meaning = result[0].meanings[0].definitions[0].definition,
+            example = result[0].meanings[0].definitions[0].example,
+            using = result[0].meanings[0].definitions[0].definition,
+            example_2 = result[0].meanings[0].definitions[0].example,
+            using_2 = result[0].meanings[0].definitions[0].definition,
+            audio = result[0].phonetics[0].audio;
             
              if(using == undefined){
                 using = result[0].meanings[1].definitions[0].definition;
@@ -73,7 +72,9 @@ function data(result,word){
 function fetchApi(word){
     word = input.value;
     let url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
-    fetch(url).then( res => res.json()).then(result => data(result, word));
+    fetch(url)
+    .then( res => res.json())
+    .then(result => catalog(result, word));
 }
 
 function search(){
