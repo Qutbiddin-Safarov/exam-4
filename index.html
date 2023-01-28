@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Style -->
+        <link rel="stylesheet" href="./css/style.css">
+    <!-- Style -->
+    <title>Dictionary</title>
+</head>
+<body>
+    <main>
+        <div class="container main-container">
+            <h1 class="site-h1">Dictionary</h1>
+            <div class="search-box">
+                <form class="search_form" id="form" onsubmit="search(); return false">
+                    <input class="search_inp" type="text" id="inp">
+                    <button onclick="search()" class="search_btn" type="button" id="btn">Search</button>
+                </form>
+            </div>
+            <div class="search-result-box">
+                <div class="content">
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Script -->
+        <script src="./js/main.js"></script>
+    <!-- Script -->
+</body>
+</html>
